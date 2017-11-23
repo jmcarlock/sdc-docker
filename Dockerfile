@@ -1,6 +1,6 @@
 FROM resin/rpi-raspbian:latest
 
-ENV OPENCV_VERSION 3.3.0
+ENV OPENCV_VERSION 3.3.1
 
 # install opencv3 as detailied in: http://www.pyimagesearch.com/2016/04/18/install-guide-raspberry-pi-3-raspbian-jessie-opencv-3/
 
