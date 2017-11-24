@@ -28,7 +28,9 @@ RUN apt-get -qy install \
 	python2.7-dev \
 	python3-dev \
 	python-pip \
-	python-numpy
+	python-numpy \
+	python3-pip \
+	python3-numpy
 
 # download latest source & contrib
 RUN cd /tmp && \
@@ -58,7 +60,7 @@ RUN cd /tmp/opencv-$OPENCV_VERSION && \
 	make clean
 	
 # cleanup source
-RUN cd /tmp && rm -rf opencv-$OPENCV_VERSION
+RUN cd /tmp && rm -rf opencv-$OPENCV_VERSION opencv_contrib.zip opencv.zip
 
 
 CMD ["/bin/bash"]
