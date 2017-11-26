@@ -30,7 +30,8 @@ RUN apt-get -qy install \
 	python-pip \
 	python-numpy \
 	python3-pip \
-	python3-numpy
+	python3-numpy \
+	libraspberrypi0
 
 # download latest source & contrib
 RUN cd /tmp && \
@@ -60,7 +61,8 @@ RUN cd /tmp/opencv-$OPENCV_VERSION && \
 	make clean
 	
 # cleanup source
-RUN cd /tmp && rm -rf opencv-$OPENCV_VERSION opencv_contrib.zip opencv.zip
+RUN cd /tmp && rm -rf opencv-$OPENCV_VERSION opencv_contrib-$OPENCV_VERSION opencv_contrib.zip opencv.zip
 
+RUN pip install imutils picamera && pip3 install imutils picamera
 
 CMD ["/bin/bash"]
