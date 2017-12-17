@@ -1,10 +1,10 @@
-ARG RASPBIAN_VERSION=latest
+ARG RASPBIAN_VERSION=jessie
 FROM resin/rpi-raspbian:$RASPBIAN_VERSION
 
 ARG RASPBIAN_VERSION
 ARG OPENCV_VERSION=3.3.1
 ENV OPENCV_VERSION $OPENCV_VERSION
-
+ARG DEBIAN_FRONTEND=noninteractive
 # install opencv3 as detailied in: http://www.pyimagesearch.com/2016/04/18/install-guide-raspberry-pi-3-raspbian-jessie-opencv-3/
 
 # update apt
