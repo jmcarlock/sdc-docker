@@ -44,7 +44,7 @@ for D in *; do
 			echo "Rebuilding for OpenCV $opencv_ver."
 			myTag=sgtwilko/rpi-raspbian-opencv:${D}.$today-$opencv_ver
 			#echo "$myTag"
-			docker build --build-arg OPENCV_VERSION=$opencv_ver --build-arg RASPBIAN_VERSION=${D} --no-cache -t $myTag rpi-raspbian-opencv/${D}
+			docker build --build-arg OPENCV_VERSION=$opencv_ver --build-arg RASPBIAN_VERSION=${D} --no-cache -t $myTag ./${D}
 			rc=$?; if [[ $rc != 0 ]]; then exit $rc; fi
 			#Image built ok...
 			((imageBuilt++))
