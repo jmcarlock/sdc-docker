@@ -6,8 +6,8 @@ Installation is based upon instructions at http://www.pyimagesearch.com.
 
 
 ## How to Install / Use ##
-Please see my [docker hub repo](https://hub.docker.com/r/sgtwilko/rpi-raspbian-opencv/) for instructions on installing and using this image.
-
+Please see my [docker hub repo](https://hub.docker.com/r/sgtwilko/rpi-raspbian-opencv/) for instructions on installing and using this image.  
+Most recent build is [![](https://images.microbadger.com/badges/version/sgtwilko/rpi-raspbian-opencv.svg)](https://microbadger.com/images/sgtwilko/rpi-raspbian-opencv "Get your own version badge on microbadger.com") which is [![](https://images.microbadger.com/badges/image/sgtwilko/rpi-raspbian-opencv.svg)](https://microbadger.com/images/sgtwilko/rpi-raspbian-opencv "Get your own image badge on microbadger.com").
 
 
 ## Building ##
