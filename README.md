@@ -1,17 +1,21 @@
 # rpi-raspbian-opencv - Docker image of OpenCV for Raspberry Pi. #
-This is a docker image of OpenCV compiled for the Raspberry Pi.  It includes python bindings for both Python2 and Python3.
-This uses resin.io Raspberry Pi base images and compiles OpenCV 3.3.1+ for python2 and python3.
+This is a docker image of OpenCV compiled for the Raspberry Pi.  It includes python bindings for both Python2 and Python3.  
+This uses resin.io Raspberry Pi base images and compiles OpenCV 3.3.1+ for python2 and python3.  
 Installation is based upon instructions at http://www.pyimagesearch.com.
 
-## How to get ##
+
+
+## How to Install / Use ##
 Please see my [docker hub repo](https://hub.docker.com/r/sgtwilko/rpi-raspbian-opencv/) for instructions on installing and using this image.
+
+
 
 ## Building ##
 You probably don't want to do this.  It's a right pain in the arse.
 
 You will need a minimum of a 16GB SDCard, 32GB recommended and more than 7GB of free space.
 
-Assuming you already have docker working on your system you will then need to increase the swap size on the RPi.
+Assuming you already have docker working on your system you will then need to increase the swap size on the RPi.  
 To do this you will need to edit `/etc/dphys-swapfile`.
 
 Comment out the line:
@@ -38,7 +42,7 @@ A basic build will take between 2 and 4 hours on a RPi 3B, and can be kicked off
 
 	docker build -t rpi-raspbian-opencv ./jessie
 
-If you want to build for Raspbian Stretch you can do so by chaning `./jessie` to `./stretch`
+If you want to build for Raspbian Stretch you can do so by chaning `./jessie` to `./stretch`  
 The `-t` parameter is providing the tag you'll use to identify this image.
 
 There are a couple of bash scripts that will build images located in the rpi-raspbian-opencv folder, but I wouldn't recommend using these as they are designed to rebuild all images, which will take multiple hours.
