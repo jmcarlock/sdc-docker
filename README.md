@@ -42,7 +42,7 @@ A basic build will take between 2 and 4 hours on a RPi 3B, and can be kicked off
 
 	docker build -t rpi-raspbian-opencv ./jessie
 
-If you want to build for Raspbian Stretch you can do so by chaning `./jessie` to `./stretch`  
+If you want to build for Raspbian Stretch you can do so by changing `./jessie` to `./stretch`  
 The `-t` parameter is providing the tag you'll use to identify this image.
 
 There are a couple of bash scripts that will build images located in the rpi-raspbian-opencv folder, but I wouldn't recommend using these as they are designed to rebuild all images, which will take multiple hours.
