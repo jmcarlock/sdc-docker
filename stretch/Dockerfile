@@ -37,6 +37,8 @@ RUN apt-get update \
 		python3-pip \
 		python3-numpy \
 		libraspberrypi0 \
+		python-setuptools \
+		python3-setuptools \
 	# download latest source & contrib \
 	&& cd /tmp \
 	&& wget -O opencv.zip https://github.com/opencv/opencv/archive/$OPENCV_VERSION.zip \
