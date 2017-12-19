@@ -5,6 +5,12 @@ ARG RASPBIAN_VERSION
 ARG OPENCV_VERSION=3.3.1
 ENV OPENCV_VERSION $OPENCV_VERSION
 ARG DEBIAN_FRONTEND=noninteractive
+ARG VCS_REF
+ARG BUILD_DATE
+
+LABEL org.label-schema.build-date=$BUILD_DATE \
+      org.label-schema.vcs-ref=$VCS_REF \
+      org.label-schema.vcs-url="https://github.com/sgtwilko/rpi-raspbian-opencv"
 # install opencv3 as detailied in: http://www.pyimagesearch.com/2016/04/18/install-guide-raspberry-pi-3-raspbian-jessie-opencv-3/
 
 # update apt

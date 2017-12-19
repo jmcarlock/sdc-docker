@@ -13,6 +13,7 @@ function fn_addTag(){
 	echo "Tagging $myTag as sgtwilko/rpi-raspbian-opencv:$1"
 	docker rmi sgtwilko/rpi-raspbian-opencv:$1
 	docker tag $myTag sgtwilko/rpi-raspbian-opencv:$1
+	docker push sgtwilko/rpi-raspbian-opencv:$1
 }
 
 #Get the ID of the resin/rpi-raspbain image tagged as latest.
@@ -44,10 +45,11 @@ for D in *; do
 			echo "Rebuilding for OpenCV $opencv_ver."
 			myTag=sgtwilko/rpi-raspbian-opencv:${D}.$today-$opencv_ver
 			#echo "$myTag"
-			time docker build --build-arg OPENCV_VERSION=$opencv_ver --build-arg RASPBIAN_VERSION=${D} -t $myTag ./${D}
+			time docker build --build-arg OPENCV_VERSION=$opencv_ver --build-arg RASPBIAN_VERSION=${D} --build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` --build-arg VCS_REF=`git rev-parse --short HEAD` -t $myTag ./${D}
 			rc=$?; if [[ $rc != 0 ]]; then exit $rc; fi
 			#Image built ok...
 			((imageBuilt++))
+			docker push $myTag
 			fn_addTag ${D}-$opencv_ver
 			if [[ ("$opencv_ver" == "$opencv_latest") ]]
 			then
@@ -69,7 +71,7 @@ for D in *; do
     fi
 done
 
-if (( $imageBuilt > 0 ))
-then
-	docker push sgtwilko/rpi-raspbian-opencv
-fi
+#if (( $imageBuilt > 0 ))
+#then
+#	docker push sgtwilko/rpi-raspbian-opencv
+#fi
