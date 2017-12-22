@@ -24,7 +24,7 @@ latestID=$fn_getID
 rebuild=$1
 
 #Array of supported OpenCV versions, latest version at the END!
-opencv_vers=(3.3.1)
+opencv_vers=(`./getOpenCVTags.sh`)
 
 #Grab latest version (should be last in array)
 opencv_latest=${opencv_vers[-1]}
