@@ -45,8 +45,12 @@ RUN apt-get update \
 		libraspberrypi0 \
 		python-setuptools \
 		python3-setuptools \
-	# download latest source & contrib \
-	&& cd /tmp \
+	# cleanup apt. \
+	&& apt-get purge -y --auto-remove \
+	&& rm -rf /var/lib/apt/lists/*
+
+	# download latest source & contrib
+RUN	cd /tmp \
 	&& wget -O opencv.zip https://github.com/opencv/opencv/archive/$OPENCV_VERSION.zip \
 	&& unzip opencv.zip \
 	&& wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/$OPENCV_VERSION.zip \
@@ -72,8 +76,6 @@ RUN apt-get update \
 	&& cd / \
 	&& rm -rf /tmp/* \
 	&& pip install imutils picamera \
-	&& pip3 install imutils picamera \
-	&& apt-get purge -y --auto-remove \
-	&& rm -rf /var/lib/apt/lists/*
+	&& pip3 install imutils picamera
 
 CMD ["/bin/bash"]
