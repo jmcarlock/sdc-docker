@@ -2,15 +2,10 @@ ARG RASPBIAN_VERSION=stretch
 FROM resin/rpi-raspbian:$RASPBIAN_VERSION
 
 ARG RASPBIAN_VERSION
-ARG OPENCV_VERSION=3.3.1
-ENV OPENCV_VERSION $OPENCV_VERSION
 ARG DEBIAN_FRONTEND=noninteractive
 ARG VCS_REF
 ARG BUILD_DATE
 
-LABEL org.label-schema.build-date=$BUILD_DATE \
-      org.label-schema.vcs-ref=$VCS_REF \
-      org.label-schema.vcs-url="https://github.com/sgtwilko/rpi-raspbian-opencv"
 # install opencv3 as detailied in: https://www.pyimagesearch.com/2017/09/04/raspbian-stretch-install-opencv-3-python-on-your-raspberry-pi/
 
 # update apt
@@ -49,11 +44,14 @@ RUN apt-get update \
 	&& apt-get purge -y --auto-remove \
 	&& rm -rf /var/lib/apt/lists/*
 
+ARG OPENCV_VERSION=3.3.1
+ENV OPENCV_VERSION $OPENCV_VERSION
+
 	# download latest source & contrib
 RUN	cd /tmp \
-	&& wget -O opencv.zip https://github.com/opencv/opencv/archive/$OPENCV_VERSION.zip \
+	&& wget -c -N -nv -O opencv.zip https://github.com/opencv/opencv/archive/$OPENCV_VERSION.zip \
 	&& unzip opencv.zip \
-	&& wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/$OPENCV_VERSION.zip \
+	&& wget -c -N -nv -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/$OPENCV_VERSION.zip \
 	&& unzip opencv_contrib.zip \
 	# build opencv \
 	&& cd /tmp/opencv-$OPENCV_VERSION \
@@ -77,5 +75,10 @@ RUN	cd /tmp \
 	&& rm -rf /tmp/* \
 	&& pip install imutils picamera \
 	&& pip3 install imutils picamera
+
+LABEL org.label-schema.build-date=$BUILD_DATE \
+      org.label-schema.vcs-ref=$VCS_REF \
+      org.label-schema.vcs-url="https://github.com/sgtwilko/rpi-raspbian-opencv"
+
 
 CMD ["/bin/bash"]

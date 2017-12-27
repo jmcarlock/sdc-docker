@@ -16,6 +16,12 @@ function fn_addTag(){
 	docker push sgtwilko/rpi-raspbian-opencv:$1
 }
 
+pidfile=/var/run/lock/rpi-raspbian-opencv.pid
+
+# exit if process is running
+[ -f $pidfile ] && kill -0 `cat $pidfile` && exit
+echo "$$" > $pidfile
+
 #Get the ID of the resin/rpi-raspbain image tagged as latest.
 fn_getID "latest"
 latestID=$fn_getID
@@ -23,8 +29,9 @@ latestID=$fn_getID
 #If we need to force a full rebuild for some reason, even if the base images haven't changed.
 rebuild=$1
 
+opencv_versRaw=`./getOpenCVTags.sh`
 #Array of supported OpenCV versions, latest version at the END!
-opencv_vers=(`./getOpenCVTags.sh`)
+opencv_vers=($opencv_versRaw)
 
 #Grab latest version (should be last in array)
 opencv_latest=${opencv_vers[-1]}
@@ -75,3 +82,5 @@ done
 #then
 #	docker push sgtwilko/rpi-raspbian-opencv
 #fi
+echo "$opencv_versRaw" > openCVVers.log
+rm $pidfile
