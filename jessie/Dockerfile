@@ -3,8 +3,6 @@ FROM resin/rpi-raspbian:$RASPBIAN_VERSION
 
 ARG RASPBIAN_VERSION
 ARG DEBIAN_FRONTEND=noninteractive
-ARG VCS_REF
-ARG BUILD_DATE
 
 # install opencv3 as detailied in: http://www.pyimagesearch.com/2016/04/18/install-guide-raspberry-pi-3-raspbian-jessie-opencv-3/
 
@@ -71,6 +69,8 @@ RUN	cd /tmp \
 	&& pip install imutils picamera \
 	&& pip3 install imutils picamera
 
+ARG VCS_REF
+ARG BUILD_DATE
 LABEL org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.vcs-ref=$VCS_REF \
       org.label-schema.vcs-url="https://github.com/sgtwilko/rpi-raspbian-opencv"
