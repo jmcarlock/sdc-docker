@@ -4,7 +4,7 @@ FROM resin/rpi-raspbian:$RASPBIAN_VERSION
 ARG RASPBIAN_VERSION
 ARG DEBIAN_FRONTEND=noninteractive
 
-# install opencv3 as detailied in: https://www.pyimagesearch.com/2017/09/04/raspbian-stretch-install-opencv-3-python-on-your-raspberry-pi/
+# install opencv3 as detailed in: https://www.pyimagesearch.com/2017/09/04/raspbian-stretch-install-opencv-3-python-on-your-raspberry-pi/
 
 # update apt
 RUN apt-get update \
@@ -42,8 +42,12 @@ RUN apt-get update \
 	&& apt-get purge -y --auto-remove \
 	&& rm -rf /var/lib/apt/lists/*
 
-ARG OPENCV_VERSION=3.3.1
+ARG OPENCV_VERSION=3.4.1
 ENV OPENCV_VERSION $OPENCV_VERSION
+ARG OPENCV_DIR=/usr/local/share/OpenCV
+ENV OPENCV_DIR $OPENCV_DIR
+ARG OpenCV_DIR=/usr/local/share/OpenCV
+ENV OpenCV_DIR $OpenCV_DIR
 
 	# download latest source & contrib
 RUN	cd /tmp \
@@ -72,13 +76,26 @@ RUN	cd /tmp \
 	&& cd / \
 	&& rm -rf /tmp/* \
 	&& pip install imutils picamera \
-	&& pip3 install imutils picamera
+	&& pip3 install imutils picamera jupyter pygame numpy pillow serial \
+        && apt update \
+	&& apt-get install swig3.0 git \
+	&& cd /root \
+	&& git clone https://github.com/ogmacorp/EOgmaNeo.git \
+	&& cd EOgmaNeo/ \
+	&& mkdir build \
+	&& cd build \
+	&& cmake -DBUILD_PREENCODERS=ON .. \
+	&& make install \
+	&& cd .. \
+	&& cd Python \
+	&& python3 setup.py install
+
 
 ARG VCS_REF
 ARG BUILD_DATE
 LABEL org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.vcs-ref=$VCS_REF \
-      org.label-schema.vcs-url="https://github.com/sgtwilko/rpi-raspbian-opencv"
+      org.label-schema.vcs-url="https://github.com/ylustina/sdc-docker"
 
 
 CMD ["/bin/bash"]
