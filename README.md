@@ -2,7 +2,7 @@
 
 Fork of [rpi-raspbian-docker](https://github.com/sgtwilko/rpi-raspbian-opencv).
 
-This is a docker image of OpenCV with EOgmaNeo  compiled for the Raspberry Pi.  It includes python bindings for both Python2 and Python3, but EOgmaNeo is installed for Python3 only.
+This is a docker image of OpenCV with EOgmaNeo compiled for the Raspberry Pi.  It includes python bindings for both Python2 and Python3, but EOgmaNeo is installed for Python3 only.
 This uses resin.io Raspberry Pi base images and compiles OpenCV 3.4.1+ and EOgmaNeo for python3.  
 Installation is based upon instructions at http://www.pyimagesearch.com.
 
@@ -43,8 +43,10 @@ During building your RPi will run at 100% CPU for an extended amount of time.  I
 
 I wouldn't recommend trying to build without a Heatsink, a fan is not necessary, but will speed up the process as the CPU will slow down as it reaches/exceeds 80°C.
 
-A basic build will take between 2 and 4 hours on a RPi 3B, and can be kicked off by going into the rpi-raspbian-opencv folder and then running:
+A basic build will take between 2 and 4 hours on a RPi 3B, and can be kicked off by:
 
-	docker build -t sdc-docker ./stetch
+	$ git clone https://github.com/ylustina/sdc-docker.git
+	$ cd sdc-docker
+	$ docker build -t sdc-docker ./stetch
 
 The `-t` parameter is providing the tag you'll use to identify this image.
