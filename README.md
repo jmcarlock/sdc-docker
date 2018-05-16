@@ -1,10 +1,14 @@
-# sdc-docker - Docker image containing dependencies of EOgmaDrive for Raspberry Pi3 Stretch. #
+# sdc-docker #
+## Docker image containing dependencies of EOgmaDrive for Raspberry Pi3 Stretch ##
+ 
 
-Fork of [rpi-raspbian-docker](https://github.com/sgtwilko/rpi-raspbian-opencv) for [EOgmaDrive Configuration1 self-driving car](https://github.com/ogmacorp/EOgmaDrive/tree/master/Configuration1). 
+This is a docker image of OpenCV with EOgmaNeo compiled for the Raspberry Pi specifically for [EOgmaDrive Configuration1 self-driving car](https://github.com/ogmacorp/EOgmaDrive/tree/master/Configuration1). 
 
-This is a docker image of OpenCV with EOgmaNeo compiled for the Raspberry Pi.  It includes python bindings for both Python2 and Python3, but EOgmaNeo is installed for Python3 only.
+Forked [rpi-raspbian-docker](https://github.com/sgtwilko/rpi-raspbian-opencv) for OpenCV. Also includes Numpy, PyGame, Pillow, Jupyter, and Serial. It includes python bindings for both Python2 and Python3, but EOgmaNeo is installed for Python3 only.
+
 This uses resin.io Raspberry Pi base images and compiles OpenCV 3.4.1+ and EOgmaNeo for python3.  
 Installation is based upon instructions at http://www.pyimagesearch.com.
+
 
 ## Installation and Usage ##
 
