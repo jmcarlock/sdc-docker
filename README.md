@@ -45,7 +45,7 @@ and uncomment and edit the remaining lines as follows:
 	#   can be set to empty for no limit, but beware of filled partitions!
 	#   this is/was a (outdated?) 32bit kernel limit (in MBytes), do not overrun it
 	#   but is also sensible on 64bit to prevent filling /var or even / partition
-	CONF_MAXSWAP=2048
+	CONF_MAXSWAP=4096
 
 Then remember to restart the swap service:
 
