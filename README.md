@@ -31,7 +31,7 @@ To run the Docker container:
 ----------------
 
 
-## The Building Process ##
+## The Build Process ##
 
 Needed a minimum of a 16GB SDCard, 32GB recommended and more than 7GB of free space.
 
