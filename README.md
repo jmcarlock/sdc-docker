@@ -12,7 +12,7 @@ Installation is based upon instructions at http://www.pyimagesearch.com.
 
 ## Installation and Usage ##
 
-Pull the Docker image:
+Pull the [Docker image](https://hub.docker.com/r/ylustina/sdc-docker/):
 
 	docker pull ylustina/sdc-docker:firsttry
 
@@ -26,8 +26,6 @@ To run the Docker container:
     		-p 8888:8888 \
     		ylustina/sdc-docker:firsttry /bin/bash
 
-
-https://hub.docker.com/r/ylustina/sdc-docker/
 
 
 ----------------
