@@ -1,8 +1,8 @@
-# sdc-docker #
+# EOgmaNeo Raspberry Pi3 Self-Driving Car #
 ## Docker image containing dependencies of EOgmaDrive for Raspberry Pi3 Stretch ##
  
 
-This is a docker image of OpenCV with EOgmaNeo compiled for the Raspberry Pi specifically for [EOgmaDrive Configuration1 self-driving car](https://github.com/ogmacorp/EOgmaDrive/tree/master/Configuration1). 
+This is a docker image of OpenCV with EOgmaNeo compiled for the Raspberry Pi specifically for the [EOgmaDrive Configuration1 self-driving car](https://github.com/ogmacorp/EOgmaDrive/tree/master/Configuration1). 
 
 Forked [rpi-raspbian-docker](https://github.com/sgtwilko/rpi-raspbian-opencv) for OpenCV. Also includes Numpy, PyGame, Pillow, Jupyter, and Serial. It includes python bindings for both Python2 and Python3, but EOgmaNeo is installed for Python3 only.
 
@@ -12,7 +12,7 @@ Installation is based upon instructions at http://www.pyimagesearch.com.
 
 ## Installation and Usage ##
 
-First pull the Docker image:
+Pull the Docker image:
 
 	docker pull ylustina/sdc-docker:firsttry
 
@@ -29,8 +29,8 @@ To run the Docker container:
 
 https://hub.docker.com/r/ylustina/sdc-docker/
 
+
 ## Building ##
-You probably don't want to do this.  It's a right pain in the arse.
 
 You will need a minimum of a 16GB SDCard, 32GB recommended and more than 7GB of free space.
 
