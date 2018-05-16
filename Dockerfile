@@ -4,7 +4,6 @@ FROM resin/rpi-raspbian:$RASPBIAN_VERSION
 ARG RASPBIAN_VERSION
 ARG DEBIAN_FRONTEND=noninteractive
 
-# install opencv3 as detailed in: https://www.pyimagesearch.com/2017/09/04/raspbian-stretch-install-opencv-3-python-on-your-raspberry-pi/
 
 # update apt
 RUN apt-get update \
@@ -80,6 +79,7 @@ RUN	cd /tmp \
         && apt update \
 	&& apt-get install swig3.0 git \
 	&& cd /root \
+	# install EOgmaNeo
 	&& git clone https://github.com/ogmacorp/EOgmaNeo.git \
 	&& cd EOgmaNeo/ \
 	&& mkdir build \
