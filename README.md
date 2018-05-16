@@ -2,9 +2,9 @@
 ## Docker image containing dependencies of EOgmaDrive for Raspberry Pi3 Stretch ##
  
 
-This is a docker image of OpenCV with EOgmaNeo compiled for the Raspberry Pi specifically for the [EOgmaDrive Configuration1 self-driving car](https://github.com/ogmacorp/EOgmaDrive/tree/master/Configuration1). 
+This is a docker image of required dependencies compiled for the Raspberry Pi specifically for the [EOgmaDrive Configuration1 self-driving car](https://github.com/ogmacorp/EOgmaDrive/tree/master/Configuration1). 
 
-Forked [rpi-raspbian-docker](https://github.com/sgtwilko/rpi-raspbian-opencv) for OpenCV. Also includes Numpy, PyGame, Pillow, Jupyter, and Serial. It includes python bindings for both Python2 and Python3, but EOgmaNeo is installed for Python3 only.
+Forked [rpi-raspbian-docker](https://github.com/sgtwilko/rpi-raspbian-opencv) for OpenCV. Also includes EOgmaNeo, Numpy, PyGame, Pillow, Jupyter, and Serial. It includes python bindings for both Python2 and Python3, but EOgmaNeo is installed for Python3 only.
 
 This uses resin.io Raspberry Pi base images and compiles OpenCV 3.4.1+ and EOgmaNeo for python3.  
 Installation is based upon instructions at http://www.pyimagesearch.com.
@@ -30,9 +30,13 @@ To run the Docker container:
 https://hub.docker.com/r/ylustina/sdc-docker/
 
 
-## Building ##
++
++
 
-You will need a minimum of a 16GB SDCard, 32GB recommended and more than 7GB of free space.
+
+## The Building Process ##
+
+Needed a minimum of a 16GB SDCard, 32GB recommended and more than 7GB of free space.
 
 Assuming you already have docker working on your system you will then need to increase the swap size on the RPi.  
 To do this you will need to edit `/etc/dphys-swapfile`.
