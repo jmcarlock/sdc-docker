@@ -1,4 +1,4 @@
-# sdc-docker - Docker image containing dependencies of EOgmaDrive for Raspberry Pi. #
+# sdc-docker - Docker image containing dependencies of EOgmaDrive for Raspberry Pi3 Stretch. #
 
 Fork of [rpi-raspbian-docker](https://github.com/sgtwilko/rpi-raspbian-opencv).
 
