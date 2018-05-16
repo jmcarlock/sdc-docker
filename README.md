@@ -30,8 +30,7 @@ To run the Docker container:
 https://hub.docker.com/r/ylustina/sdc-docker/
 
 
-+
-+
+----------------
 
 
 ## The Building Process ##
