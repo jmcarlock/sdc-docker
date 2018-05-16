@@ -8,7 +8,22 @@ Installation is based upon instructions at http://www.pyimagesearch.com.
 
 ## Installation and Usage ##
 
-**WIP**
+First pull the Docker image:
+
+	docker pull ylustina/sdc-docker:firsttry
+
+To run the Docker container:
+
+	docker run -ti --device=/dev/vcsm \
+    		--device=/dev/vchiq \
+    		-e DISPLAY=$DISPLAY \
+    		-v /tmp/.X11-unix:/tmp/.X11-unix:ro \
+    		-v /home/pi/test/:/home/ \
+    		-p 8888:8888 \
+    		ylustina/sdc-docker:firsttry /bin/bash
+
+
+https://hub.docker.com/r/ylustina/sdc-docker/
 
 ## Building ##
 You probably don't want to do this.  It's a right pain in the arse.
