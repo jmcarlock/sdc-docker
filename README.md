@@ -2,12 +2,11 @@
 ## Docker image containing dependencies of EOgmaDrive for Raspberry Pi3 Stretch ##
  
 
-This is a docker image of required dependencies compiled for the Raspberry Pi specifically for the [EOgmaDrive Configuration1 self-driving car](https://github.com/ogmacorp/EOgmaDrive/tree/master/Configuration1). 
+This is a docker image of required dependencies compiled for the Raspberry Pi for [EOgmaDrive's Configuration1 self-driving car](https://github.com/ogmacorp/EOgmaDrive/tree/master/Configuration1). 
 
 Forked [rpi-raspbian-docker](https://github.com/sgtwilko/rpi-raspbian-opencv) for OpenCV. Also includes EOgmaNeo, Numpy, PyGame, Pillow, Jupyter, and Serial. It includes python bindings for both Python2 and Python3, but EOgmaNeo is installed for Python3 only.
 
-This uses resin.io Raspberry Pi base images and compiles OpenCV 3.4.1+ and EOgmaNeo for python3.  
-Installation is based upon instructions at http://www.pyimagesearch.com.
+This uses resin.io Raspberry Pi base images and compiles OpenCV 3.4.1+ and EOgmaNeo for python3. 
 
 
 ## Installation and Usage ##
@@ -30,7 +29,7 @@ To run the Docker container:
 ----------------
 
 
-## License and Copyright ##
+## License and Copyright for EOgmaDrive ##
 
 [OgmaCorp](https://github.com/ogmacorp)
 
@@ -44,7 +43,7 @@ EOgmaDrive Copyright (c) 2017 Ogma Intelligent Systems Corp. All rights reserved
 ----------------
 
 
-## The Build Process ##
+## The Build Process for Docker Image ##
 
 Needed a minimum of a 16GB SDCard, 32GB recommended and more than 7GB of free space.
 
@@ -72,9 +71,7 @@ Then remember to restart the swap service:
 
 Without this, the RPi will run out of RAM and will crash at around 86% during the build.
 
-During building your RPi will run at 100% CPU for an extended amount of time.  It will run hot, I've seen mine hit 85°C.
-
-I wouldn't recommend trying to build without a Heatsink, a fan is not necessary, but will speed up the process as the CPU will slow down as it reaches/exceeds 80°C.
+During building your RPi will run at 100% CPU for an extended amount of time: it will run hot. I wouldn't recommend trying to build without a Heatsink, a fan is not necessary, but will speed up the process as the CPU will slow down as it reaches/exceeds 80°C.
 
 A basic build will take between 2 and 4 hours on a RPi 3B, and can be kicked off by:
 
