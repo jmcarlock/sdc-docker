@@ -75,8 +75,13 @@ RUN	cd /tmp \
 	# cleanup source \
 	&& cd / \
 	&& rm -rf /tmp/* \
-	&& pip install imutils picamera \
-	&& pip3 install imutils picamera jupyter pygame numpy pillow pyserial \
+	&& pip3 install imutils \
+		picamera \
+		jupyter \
+		pygame \
+		numpy \
+		pillow \
+		pyserial
         && apt update \
 	&& apt-get install swig3.0 git \
 	&& cd /root \
