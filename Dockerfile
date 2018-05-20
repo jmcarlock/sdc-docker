@@ -37,6 +37,7 @@ RUN apt-get update \
 		libraspberrypi0 \
 		python-setuptools \
 		python3-setuptools \
+		python-pygame
 	# cleanup apt. \
 	&& apt-get purge -y --auto-remove \
 	&& rm -rf /var/lib/apt/lists/*
@@ -75,7 +76,7 @@ RUN	cd /tmp \
 	&& cd / \
 	&& rm -rf /tmp/* \
 	&& pip install imutils picamera \
-	&& pip3 install imutils picamera jupyter pygame numpy pillow serial \
+	&& pip3 install imutils picamera jupyter pygame numpy pillow pyserial \
         && apt update \
 	&& apt-get install swig3.0 git \
 	&& cd /root \
