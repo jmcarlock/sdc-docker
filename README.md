@@ -77,6 +77,6 @@ A basic build will take between 2 and 4 hours on a RPi 3B, and can be kicked off
 
 	$ git clone https://github.com/ylustina/sdc-docker.git
 	$ cd sdc-docker
-	$ docker build -t sdc-docker ./stretch
+	$ docker build -t sdc-docker .
 
 The `-t` parameter is providing the tag you'll use to identify this image.
