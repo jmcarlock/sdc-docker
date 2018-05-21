@@ -37,7 +37,7 @@ RUN apt-get update \
 		libraspberrypi0 \
 		python-setuptools \
 		python3-setuptools \
-		python-pygame
+		python-pygame \
 	# cleanup apt. \
 	&& apt-get purge -y --auto-remove \
 	&& rm -rf /var/lib/apt/lists/*
@@ -81,7 +81,7 @@ RUN	cd /tmp \
 		pygame \
 		numpy \
 		pillow \
-		pyserial
+		pyserial \
         && apt update \
 	&& apt-get install swig3.0 git \
 	&& cd /root \
