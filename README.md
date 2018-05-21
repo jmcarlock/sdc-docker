@@ -4,7 +4,7 @@
 
 This is a docker image of required dependencies compiled for the Raspberry Pi for [EOgmaDrive's Configuration1 self-driving car](https://github.com/ogmacorp/EOgmaDrive/tree/master/Configuration1). 
 
-Forked [rpi-raspbian-docker](https://github.com/sgtwilko/rpi-raspbian-opencv) for OpenCV. Also includes EOgmaNeo, Numpy, PyGame, Pillow, Jupyter, and Serial. It includes python bindings for both Python2 and Python3, but EOgmaNeo is installed for Python3 only.
+Forked [rpi-raspbian-docker](https://github.com/sgtwilko/rpi-raspbian-opencv) for OpenCV. Also includes EOgmaNeo, Numpy, PyGame, Pillow, Jupyter, and PySerial. It includes python bindings for both Python2 and Python3, but EOgmaNeo is installed for Python3 only.
 
 This uses resin.io Raspberry Pi base images and compiles OpenCV 3.4.1+ and EOgmaNeo for python3. 
 
