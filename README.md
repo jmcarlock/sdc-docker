@@ -11,9 +11,9 @@ This uses resin.io Raspberry Pi base images and compiles OpenCV 3.4.1+ and EOgma
 
 ## Installation and Usage ##
 
-Pull the [Docker image](https://hub.docker.com/r/ylustina/sdc-docker/):
+Pull the latest [Docker image](https://hub.docker.com/r/ylustina/sdc-docker/):
 
-	docker pull ylustina/sdc-docker:firsttry
+	docker pull ylustina/sdc-docker:latest
 
 To run the Docker container:
 
@@ -23,7 +23,7 @@ To run the Docker container:
     		-v /tmp/.X11-unix:/tmp/.X11-unix:ro \
     		-v /home/pi/test/:/home/ \
     		-p 8888:8888 \
-    		ylustina/sdc-docker:firsttry /bin/bash
+    		ylustina/sdc-docker:latest /bin/bash
 
 
 ----------------
