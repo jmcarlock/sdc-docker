@@ -76,7 +76,7 @@ To run the Docker container:
 	docker run -ti --privileged \
 		-e DISPLAY=$DISPLAY \
 		-v /tmp/.X11-unix:/tmp/.X11-unix:ro \
-		-v /home/pi/test/:/home/ \
+		-v /home/pi/shared-with-docker/:/root/ \
 		-p 8888:8888 \
 		ylustina/sdc-docker:latest /bin/bash
 
