@@ -56,6 +56,17 @@ Remember to push a button on the controller on reboot and after starting the dae
 
 ## Installation and Usage ##
 
+
+
+#### Installing Docker on the Pi #### 
+
+	cd ~
+	curl -fsSL get.docker.com -o get-docker.sh
+	sudo sh get-docker.sh
+	sudo usermod -aG docker pi
+
+exit, and then ssh back in.
+
 Pull the latest [Docker image](https://hub.docker.com/r/ylustina/sdc-docker/):
 
 	docker pull ylustina/sdc-docker:latest
@@ -68,6 +79,14 @@ To run the Docker container:
 		-v /home/pi/test/:/home/ \
 		-p 8888:8888 \
 		ylustina/sdc-docker:latest /bin/bash
+
+
+
+## Installing Ino and Arduino ## 
+
+
+
+
 
 
 ----------------
