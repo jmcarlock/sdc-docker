@@ -45,8 +45,7 @@ To start:
 
 PUSH A BUTTON
 
-	/dev/input/
-	ls
+	ls /dev/input/
 
 Should show /dev/usb/js01
 
@@ -70,6 +69,10 @@ exit, and then ssh back in.
 Pull the latest [Docker image](https://hub.docker.com/r/ylustina/sdc-docker/):
 
 	docker pull ylustina/sdc-docker:latest
+
+Make a directory for a shared folder:
+
+	mkdir shared-with-docker
 
 To run the Docker container:
 
