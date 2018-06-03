@@ -9,6 +9,51 @@ Forked [rpi-raspbian-docker](https://github.com/sgtwilko/rpi-raspbian-opencv) fo
 This uses resin.io Raspberry Pi base images and compiles OpenCV 3.4.1+ and EOgmaNeo for python3. 
 
 
+
+## Controller Installation ##
+
+Install outside of the Docker container. 
+
+	sudo apt install python3
+	git clone https://github.com/ynsta/steamcontroller.git
+	cd steamcontroller
+	sudo python3 setup.py install 
+	
+in 
+
+	 sudo nano /etc/udev/rules.d/99-steam-controller.rules
+	 
+write 
+
+	# replace game group by a valid group on your system
+	# Steam controller keyboard/mouse mode
+	SUBSYSTEM=="usb", ATTRS{idVendor}=="28de", GROUP="games", MODE="0660"
+
+	# Steam controller gamepad mode
+	KERNEL=="uinput", MODE="0660", GROUP="games", OPTIONS+="static_node=uinput"
+
+
+to reload and reboot:
+
+	sudo udevadm control --reload
+	sudo reboot
+
+
+To start:
+
+	python3 ~/steamcontroller/scripts/sc-xbox.py start
+
+PUSH A BUTTON
+
+	/dev/input/
+	ls
+
+Should show /dev/usb/js01
+
+Remember to push a button on the controller on reboot and after starting the daemon!!! 
+
+
+
 ## Installation and Usage ##
 
 Pull the latest [Docker image](https://hub.docker.com/r/ylustina/sdc-docker/):
