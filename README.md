@@ -62,13 +62,12 @@ Pull the latest [Docker image](https://hub.docker.com/r/ylustina/sdc-docker/):
 
 To run the Docker container:
 
-	docker run -ti --device=/dev/vcsm \
-    		--device=/dev/vchiq \
-    		-e DISPLAY=$DISPLAY \
-    		-v /tmp/.X11-unix:/tmp/.X11-unix:ro \
-    		-v /home/pi/test/:/home/ \
-    		-p 8888:8888 \
-    		ylustina/sdc-docker:latest /bin/bash
+	docker run -ti --privileged \
+		-e DISPLAY=$DISPLAY \
+		-v /tmp/.X11-unix:/tmp/.X11-unix:ro \
+		-v /home/pi/test/:/home/ \
+		-p 8888:8888 \
+		ylustina/sdc-docker:latest /bin/bash
 
 
 ----------------
